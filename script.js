@@ -18,7 +18,7 @@ document.getElementById('copy').addEventListener('click', function(){
 // Flood year switcher
 (function(){
   if(!document.getElementById('flimg'))return;
-  var IM={F1974:'img/f1974.jpg',F1988:'img/f1988.jpg',F1998:'img/f1998.jpg',F2010:'img/f2010.jpg',F2017:'img/f2017.jpg'};
+  var IM={F1974:'f1974.jpg',F1988:'f1988.jpg',F1998:'f1998.jpg',F2010:'f2010.jpg',F2017:'f2017.jpg'};
   var D={
     F1974:{y:'1974',tag:'one of the first great floods after independence',note:'About 10,360 sq km of the Mymensingh region alone was flooded.'},
     F1988:{y:'1988',tag:'a flood that reached the capital',note:'Around 82,000 sq km, roughly 60% of the country, went under water, and Dhaka was badly affected.'},
@@ -39,7 +39,7 @@ document.getElementById('copy').addEventListener('click', function(){
 // Dhaka year switcher
 (function(){
   if(!document.getElementById('dkimg'))return;
-  var IM={D2013:'img/d2013.jpg',D2018:'img/d2018.jpg',D2023:'img/d2023.jpg'};
+  var IM={D2013:'d2013.jpg',D2018:'d2018.jpg',D2023:'d2023.jpg'};
   var D={
     D2013:{y:'2013',note:'Good livability was rare in every season, peaking at 2.95% in winter. In summer, 39.54% of the city rated very poor.'},
     D2018:{y:'2018',note:'Summer was the best season of the decade, with 6.94% of the city rated good. The monsoon was worse, with 46.78% poor and 32.24% very poor.'},
@@ -59,7 +59,7 @@ document.getElementById('copy').addEventListener('click', function(){
 // Gazipur map switcher
 (function(){
   if(!document.getElementById('gzimg'))return;
-  var IM={GRES:'img/gres.jpg',GROAD:'img/groad.jpg',GGRAPH:'img/ggraph.jpg',GACC:'img/gacc.jpg'};
+  var IM={GRES:'gres.jpg',GROAD:'groad.jpg',GGRAPH:'ggraph.jpg',GACC:'gacc.jpg'};
   var D={
     GRES:{alt:'Map of tourist spots and resorts across the upazilas of Gazipur District',cap:'Tourist spots and resorts across the five upazilas.'},
     GROAD:{alt:'Map of the road network of Gazipur District with the N3 highway',cap:'Road network, with the N3 highway in red.'},
@@ -77,7 +77,7 @@ document.getElementById('copy').addEventListener('click', function(){
 // Cyclone switcher
 (function(){
   if(!document.getElementById('cyimg'))return;
-  var IM={SITRANG:'img/sitrang.jpg',BULBUL:'img/bulbul.jpg',AMPHAN:'img/amphan.jpg',MOCHA:'img/mocha.jpg'};
+  var IM={SITRANG:'sitrang.jpg',BULBUL:'bulbul.jpg',AMPHAN:'amphan.jpg',MOCHA:'mocha.jpg'};
   var D={
     SITRANG:{n:'Sitrang',e:'52.72%',note:'The weakest storm in the study had the smallest effect: erosion (52.72%) and accretion (47.28%) were almost balanced.'},
     BULBUL:{n:'Bulbul',e:'57.39%',note:'Erosion clearly outweighed accretion, which covered 42.57% of the shoreline.'},
