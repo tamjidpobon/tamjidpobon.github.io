@@ -3,142 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Md Tamjid Al Noor Pobon: GIS analyst and geographer researching climate hazards, cyclones and floods in coastal Bangladesh.">
 <title>Tamjid Al Noor Pobon</title>
+<meta name="description" content="Md Tamjid Al Noor Pobon: GIS analyst and geographer researching climate hazards, environmental change and community resilience.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<style>
-html,body{margin:0}img{max-width:100%}
-/* Layout: a single map-sheet column; left margin carries section labels like a map legend, a contour field sits behind the header. */
-:root{
-  --bg:#f6f8f7; --surface:#ffffff; --fg:#17201f; --muted:#5b6866; --line:#d9e0de;
-  --accent:#1d5c7a; --sediment:#a3742f; --contour:#1d5c7a;
-  --display:"Instrument Serif", Georgia, "Times New Roman", serif;
-  --body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f1515; --surface:#151d1d; --fg:#e4ebe9; --muted:#93a29f; --line:#26312f;
-  --accent:#7cb8d6; --sediment:#d3a35e; --contour:#7cb8d6; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f1515; --surface:#151d1d; --fg:#e4ebe9; --muted:#93a29f; --line:#26312f;
-  --accent:#7cb8d6; --sediment:#d3a35e; --contour:#7cb8d6; color-scheme:dark}
-
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
-
-/* Header */
-header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-#contours{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
-.hero{position:relative;padding-block:28px 64px}
-nav{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;align-items:baseline;font:500 .8125rem/1.4 var(--mono);color:var(--muted);margin-bottom:72px}
-nav ul{display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;margin:0;padding:0}
-nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--accent)}
-.coord{letter-spacing:.02em}
-h1{font:400 clamp(2.75rem,8vw,5.5rem)/1 var(--display);letter-spacing:-.01em;margin:0 0 20px;text-wrap:balance}
-h1 em{color:var(--accent)}
-.lede{font-size:clamp(1.125rem,2.2vw,1.3rem);max-width:36ch;margin:0 0 28px;color:var(--fg)}
-.meta{display:flex;flex-wrap:wrap;gap:10px 28px;font:400 .875rem/1.4 var(--mono);color:var(--muted)}
-.meta b{color:var(--fg);font-weight:500}
-
-/* Sections */
-section{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px 48px;padding-block:56px;border-bottom:1px solid var(--line)}
-section:last-of-type{border-bottom:0}
-.label{font:500 .75rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);padding-top:6px}
-.label span{display:block;color:var(--sediment);margin-bottom:4px;letter-spacing:.04em}
-h2{font:400 clamp(1.75rem,3.5vw,2.25rem)/1.15 var(--display);margin:0 0 20px;text-wrap:balance}
-h3{font:600 1.0625rem/1.4 var(--body);margin:0}
-p{margin:0 0 14px;max-width:66ch}
-.content{min-width:0}
-
-.interests{display:grid;grid-template-columns:minmax(0,1fr);gap:0;list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--line)}
-.interests li{padding:16px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
-.interests li::before{content:"";flex:none;width:8px;height:8px;border:1.5px solid var(--accent);border-radius:50%;transform:translateY(-2px)}
-.interests span{display:block;color:var(--muted);font-size:.975rem;max-width:62ch}
-.group{font:500 .72rem/1.4 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);padding:22px 0 4px;border-bottom:0!important;display:block!important}
-
-.role{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline;margin-bottom:6px}
-.when{font:400 .8125rem/1.4 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
-.org{color:var(--muted);margin:0 0 18px}
-.projects{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
-.projects li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;padding:18px 0;border-bottom:1px solid var(--line)}
-.projects p{grid-column:1/-1;margin:2px 0 0;color:var(--muted);font-size:.975rem}
-.client{font:400 .75rem/1.5 var(--mono);color:var(--sediment);text-align:right;max-width:22ch}
-
-.entry{padding-block:16px;border-top:1px solid var(--line)}
-.entry:first-of-type{border-top:0;padding-top:0}
-.kind{font:500 .72rem/1.4 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--sediment);margin-bottom:6px}
-.entry h3{font:400 1.375rem/1.3 var(--display)}
-.entry ul{margin:10px 0 0;padding-left:1.1em;color:var(--muted);font-size:.975rem;max-width:66ch}
-.entry ul li{margin-bottom:4px}
-.pill{display:inline-block;font:500 .72rem/1 var(--mono);padding:5px 8px;border:1px solid var(--accent);color:var(--accent);border-radius:999px;vertical-align:middle;margin-left:6px;letter-spacing:.03em}
-
-.talks{list-style:none;padding:0;margin:8px 0 0}
-.talks li{padding:12px 0;border-top:1px solid var(--line)}
-.talks .t{font-weight:500}
-a.plain{color:inherit;text-decoration:none}
-a.plain:hover{color:var(--accent);text-decoration:underline}
-.talks .v{color:var(--muted);font-size:.95rem}
-
-.sub{font:500 .75rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:40px 0 4px}
-
-.timeline{list-style:none;padding:0;margin:0;position:relative}
-.timeline li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
-.timeline .yr{font:500 .9rem/1.5 var(--mono);color:var(--accent);font-variant-numeric:tabular-nums}
-.timeline .place{font-weight:500}
-.timeline .what{color:var(--muted);font-size:.95rem}
-
-.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
-.edu{display:grid;gap:18px}
-.gpa{font:500 1.75rem/1 var(--display);color:var(--accent)}
-.gpa small{font:400 .8rem var(--mono);color:var(--muted);margin-left:4px}
-
-.skills{display:grid;gap:18px}
-.skills dt{font:500 .75rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
-.skills dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:.9rem;padding:4px 10px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
-
-.awards{list-style:none;padding:0;margin:0}
-.awards li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 0;border-top:1px solid var(--line)}
-.awards .by{grid-column:1/-1;color:var(--muted);font-size:.925rem}
-
-.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:8px}
-.email{font:500 clamp(1rem,2.6vw,1.375rem)/1.3 var(--mono);color:var(--fg);user-select:all;word-break:break-all}
-button{font:500 .8125rem var(--mono);color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:999px;padding:8px 14px;cursor:pointer}
-button:hover{background:var(--accent);color:var(--bg)}
-footer{padding-block:32px 48px;font:400 .8125rem var(--mono);color:var(--muted);border-top:1px solid var(--line)}
-
-@media (max-width:760px){
-  section{grid-template-columns:minmax(0,1fr);gap:12px;padding-block:44px}
-  .cols
-  nav{margin-bottom:48px}
-  .client{text-align:left}
-  .projects li{grid-template-columns:minmax(0,1fr)}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
+<link rel="stylesheet" href="style.css">
+<style>html,body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
-
 <header>
   <canvas id="contours" aria-hidden="true"></canvas>
   <div class="wrap hero">
-    <nav aria-label="Sections">
-      <span class="coord">23.81° N · 90.37° E</span>
-      <ul>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#field">Fieldwork</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav aria-label="Pages">
+      <a class="home" href="index.html">Tamjid Al Noor Pobon</a>
+      <ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="fieldwork.html">Fieldwork</a></li></ul>
     </nav>
     <h1>Md Tamjid Al Noor <em>Pobon</em></h1>
-    <p class="lede">Geographer and GIS analyst studying how cyclones and floods reshape coastal Bangladesh, and how communities live with the risk.</p>
+    <p class="lede">Geographer and GIS analyst studying climate hazards, environmental change and how communities adapt to them.</p>
     <div class="meta">
       <span><b>GIS Analyst</b> · CEGIS</span>
       <span><b>MSc</b> Geography &amp; Environment, CGPA 3.97</span>
@@ -162,152 +43,74 @@ footer{padding-block:32px 48px;font:400 .8125rem var(--mono);color:var(--muted);
     </div>
   </section>
 
-  <section id="work">
-    <div class="label"><span>Layer 01</span>Experience</div>
+  <section id="projects">
+    <div class="label"><span>Layer 01</span>Projects</div>
     <div class="content">
-      <div class="role"><h2 style="margin:0">GIS Analyst</h2><span class="when">Jun 2024 – present</span></div>
-      <p class="org">Center for Environmental and Geographic Information Services (CEGIS), Dhaka</p>
-      <p>Collecting and analysing spatial data, producing maps and visualisations, running spatial analysis for environmental assessment, and managing geographic databases.</p>
-      <ul class="projects">
-        <li class="group">Risk, vulnerability and community</li>
-        <li><h3>Aquifer mapping and water stress assessment, 13 districts of north-west Bangladesh</h3><span class="client">WARPO</span>
-          <p>Research Assistant &amp; GIS Expert. Designed and ran participatory rural appraisal surveys, built GIS databases and analysed surface and groundwater resources.</p></li>
-        <li><h3>ESIA for the Muhuri–Kahua flood control, drainage and irrigation project, Feni</h3><span class="client">Bangladesh Water Development Board</span>
-          <p>Supported social and environmental impact assessment with spatial analysis, land acquisition mapping, and management and rehabilitation planning.</p></li>
-        <li class="group">Morphological and landscape change</li>
-        <li><h3>Anthropogenic impacts on delta landscapes for nature-based solutions</h3><span class="client">World Bank Bangladesh</span>
-          <p>Processed multi-temporal imagery, analysed topographic and landscape change, and supported hydromorphology and sediment dynamics assessment.</p></li>
-        <li class="group">Other GIS projects</li>
-        <li><h3>Land use mapping with satellite imagery</h3><span class="client">Ministry of Land</span>
-          <p>Digital land use maps with mauza- and plot-level databases.</p></li>
-        <li><h3>Integrated GIS web application, BGISP website and Economic Census 2024</h3><span class="client">Bangladesh Bureau of Statistics</span>
-          <p>Geospatial databases, geocoding, GIS layers and quality assurance for nationwide census operations.</p></li>
-      </ul>
-
-      <p class="sub">Earlier</p>
-      <div class="role"><h3>Research Assistant, Spatial Analysis Lab</h3><span class="when">2019 – 2024</span></div>
-      <p class="org" style="margin-bottom:6px">Prof. Dr. Khandaker Hasan Mahmud · Dept. of Geography &amp; Environment, Jahangirnagar University</p>
-      <p style="color:var(--muted);font-size:.975rem">Designed methods for spatial and coastal studies, processed and analysed geospatial data, and produced thematic maps and visualisations to communicate findings.</p>
+      <h2>Selected projects, with the maps behind them.</h2>
+      <div class="cards">
+        <a class="card" href="shoreline.html"><img src="img/thumb_amphan.jpg" width="640" height="480" alt=""><div class="body"><span class="kind" style="margin:0">Coasts</span><h3>Shoreline change after four cyclones</h3><p>Landsat 8, MNDWI and DSAS show how far the coast retreated after Sitrang, Bulbul, Amphan and Mocha.</p><span class="go">View project →</span></div></a>
+        <a class="card" href="floods.html"><img src="img/thumb_f1998.jpg" width="640" height="480" alt=""><div class="body"><span class="kind" style="margin:0">Floods</span><h3>Fifty years of floods in Bangladesh</h3><p>Flood extent maps from 1974 to 2017 and the districts most prone to flooding.</p><span class="go">View project →</span></div></a>
+        <a class="card" href="dhaka.html"><img src="img/thumb_darea.jpg" width="640" height="480" alt=""><div class="body"><span class="kind" style="margin:0">Cities</span><h3>How livable is Dhaka's environment?</h3><p>A satellite-based livability index for Dhaka across seasons, 2013 to 2023.</p><span class="go">View project →</span></div></a>
+        <a class="card" href="gazipur.html"><img src="img/thumb_gacc.jpg" width="640" height="480" alt=""><div class="body"><span class="kind" style="margin:0">Accessibility</span><h3>Do roads decide where resorts open?</h3><p>Graph theory and the Shimbel index link road access to Gazipur's resort boom.</p><span class="go">View project →</span></div></a>
+      </div>
     </div>
   </section>
 
-  <section id="research">
-    <div class="label"><span>Layer 02</span>Research</div>
+  <section id="ongoing">
+    <div class="label"><span>Layer 02</span>Ongoing</div>
     <div class="content">
+      <h2>Ongoing work</h2>
       <div class="entry">
-        <div class="kind">Journal article · Main author <span class="pill">Submitted Sep 2026</span></div>
-        <h3><a class="plain" href="https://doi.org/10.21203/rs.3.rs-7954742/v1">Geospatial Technology for Rapid Shoreline Change Analysis of Tropical Cyclones in Coastal Bangladesh</a></h3>
-        <p style="color:var(--muted);margin-top:6px">Pobon, M. T. A. N., Akter, R., and Mahmud, K. H. Submitted to <i>The Jahangirnagar Review</i>. Preprint on Research Square, November 2025 · <a href="https://doi.org/10.21203/rs.3.rs-7954742/v1">doi:10.21203/rs.3.rs-7954742/v1</a></p>
+        <div class="kind">Journal article · Main author <span class="pill">Submitted to NHESS · Oct 2026</span></div>
+        <h3>Spatial transferability of knowledge-based, statistical and machine learning models for flood susceptibility mapping in Bangladesh</h3>
+        <p class="muted" style="margin-top:6px">With Khandakar Hasan Mahmud. Building on my BSc dissertation, this study compares an expert-based model (AHP), a frequency ratio model and three machine learning models for mapping flood susceptibility across Bangladesh, using ten conditioning factors and flood records from the Global Flood Database. It tests how well each model predicts in regions it was not trained on, and finds that the simpler frequency ratio model transfers better than machine learning while staying transparent.</p>
       </div>
       <div class="entry">
-        <div class="kind">MSc thesis</div>
-        <h3>Geo-spatial Technology for Rapid Eco-Physical Impact Assessment of Tropical Cyclones of the Bay of Bengal</h3>
-        <ul>
-          <li>Measured the physical impact of multiple cyclones with multi-temporal GIS and remote sensing, using shoreline erosion and deposition as the main indicator alongside vegetation change.</li>
-          <li>Quantified shoreline change for four cyclones (Sitrang, Bulbul, Amphan and Mocha) using Landsat 8 imagery, MNDWI and the Digital Shoreline Analysis System (DSAS).</li>
-          <li>Compared impacts across cyclone categories to gauge relative severity.</li>
-          <li>Zoned coastal districts by impact, giving a spatial framework for risk management.</li>
-        </ul>
+        <div class="kind">Research in progress <span class="pill">In progress</span></div>
+        <h3>Integrating flood hazard and road-network exposure to map flood risk to urban roads: a Fuzzy AHP approach in Dhaka, Bangladesh</h3>
+        <p class="muted" style="margin-top:6px">Combines a flood hazard model with the exposure of Dhaka's road network to show which city roads face the greatest flood risk, using Fuzzy AHP to weight the factors.</p>
       </div>
       <div class="entry">
-        <div class="kind">BSc dissertation</div>
-        <h3>GIS-based Multi-Criteria Approach for Flood Susceptibility Mapping of Bangladesh</h3>
-        <ul>
-          <li>Compiled an inventory of flood hazards and mapped the key flood conditioning factors.</li>
-          <li>Built a multi-criteria susceptibility model to support risk assessment and management.</li>
-        </ul>
+        <div class="kind">Journal article · Sole author <span class="pill">In preparation</span></div>
+        <h3>Socio-economic conditions and perceived microclimatic stress among tea garden workers: a case study of Khadimnagar Tea Estate, Sylhet</h3>
+        <p class="muted" style="margin-top:6px">Based on surveys with tea garden workers during my master's fieldwork in Sylhet, this study looks at wages, housing and support, and at how workers experience heat and humidity in the gardens. It finds an overlapping burden of low pay, poor housing and heat exposure at work, and points to wage reform, better housing, shade trees and heat-safe work hours.</p>
       </div>
-
-      <p class="sub">Other publications</p>
-      <ul class="talks">
-        <li><div class="t"><a class="plain" href="https://www.researchgate.net/publication/385619510_1970_sala_theke_2020_sala_paryanta_banladesera_ban'ya_paristhitira_bhaugalika_paryalocana_Geographical_review_of_flood_situation_in_Bangladesh_from_1970_to_2020">Geographical Review of the Flood Situation in Bangladesh, 1970–2020</a></div>
-          <div class="v" lang="bn">১৯৭০ সাল থেকে ২০২০ সাল পর্যন্ত বাংলাদেশের বন্যা পরিস্থিতির ভৌগলিক পর্যালোচনা</div>
-          <div class="v">Article in Bangla · 2024 · with Bibi Hafsa and Jannatun Hussna Tuya</div></li>
-        <li><div class="t"><a class="plain" href="https://www.researchgate.net/publication/376407835_Risk_Reduction_through_Community-based_Disaster_Resilience_Bangladesh_Perspective_kami'uniti-bhittika_duryoga_sahanasilata_carcara_madhyame_jhumki_hrasa_preksita_banladesa">Risk Reduction through Community-based Disaster Resilience: Bangladesh Perspective</a></div>
-          <div class="v">Review article in Bangla · 2023 · with Khandakar Hasan Mahmud, Ummul Momanin Coalee and Sumaiya Ahmed</div></li>
-        <li><div class="t"><a class="plain" href="https://www.researchgate.net/publication/347995948_Ogny_Geographic_Atlas">Ogny Geographic Atlas</a></div>
-          <div class="v">Book · 2020 · Research Assistant, with Khandakar Hasan Mahmud, Bibi Hafsa, Jafar Iqbal and others</div></li>
-      </ul>
-
-      <p class="sub">Conference presentations</p>
-      <ul class="talks">
-        <li><div class="t">Geospatial Technology for Rapid Eco-Physical Impact Assessment of Tropical Cyclone of Bay of Bengal</div>
-          <div class="v">ICESRM 2025, Mawlana Bhashani Science and Technology University · Lead author &amp; presenter</div></li>
-        <li><div class="t"><a class="plain" href="https://www.researchgate.net/publication/380403816_Spatiotemporal_Analysis_of_Urban_Ecological_Livability_Quality_of_Dhaka_City_Using_GIS_and_Remote_Sensing_Techniques">Spatiotemporal analysis of urban ecological livability quality of Dhaka City using GIS and remote sensing</a></div>
-          <div class="v">1st Graduate Research Conference, Jahangirnagar University, 7 May 2024 · Lead author &amp; presenter</div></li>
-        <li><div class="t"><a class="plain" href="https://www.researchgate.net/publication/380403748_The_Role_of_Road_Network_on_The_Emerging_Resort_Industry_A_Geospatial_Study_on_The_Gazipur_District_of_Bangladesh">The Role of Road Network on the Emerging Resort Industry: A Geospatial Study on Gazipur District</a></div>
-          <div class="v">1st Graduate Research Conference, Jahangirnagar University, 7 May 2024 · Co-author</div></li>
-        <li><div class="t"><a class="plain" href="https://www.researchgate.net/publication/375923593_Exploring_Tropical_Cyclone_Vulnerability_in_Bangladesh_A_Climate_Change_Perspective">Exploring Tropical Cyclone Vulnerability in Bangladesh: A Climate Change Perspective</a></div>
-          <div class="v">1st South Asian Conference on Emerging Issues in a Changing Climatic Scenario, Dhaka, 25–26 Nov 2023 · Co-author</div></li>
-      </ul>
-      <p style="margin-top:20px"><a href="https://www.researchgate.net/profile/Md-Tamjid-Al-Noor-Pobon">Full profile on ResearchGate →</a></p>
     </div>
   </section>
 
-  <section id="field">
-    <div class="label"><span>Layer 03</span>Fieldwork</div>
+  <section id="now">
+    <div class="label"><span>Layer 03</span>Now</div>
     <div class="content">
-      <h2>Field campaigns from the Sundarbans to the northern plains, and participatory work with the communities who live there.</h2>
-      <p style="color:var(--muted)">Methods used in the field include participatory rural appraisal (PRA), key informant interviews, household surveys, beach profiling, river cross-sections and vegetation sampling.</p>
-      <ol class="timeline">
-        <li><span class="yr">2024–</span><div><div class="place">13 districts of north-west Bangladesh</div><div class="what">Participatory rural appraisal for aquifer mapping and water stress assessment (WARPO).</div></div></li>
-        <li><span class="yr">2024</span><div><div class="place">Sylhet region</div><div class="what">Master's field survey of socioeconomic dynamics, microclimate and environmental profile, including interviews and a socio-economic survey of tea workers.</div></div></li>
-        <li><span class="yr">2023</span><div><div class="place">Sundarbans · Jamtola Sea Beach</div><div class="what">Climatic variables and plant community patterns using the Braun-Blanquet cover-abundance scale.</div></div></li>
-        <li><span class="yr">2022</span><div><div class="place">Kuakata Sea Beach, Barishal</div><div class="what">SWOT analysis of a coastal tourism site.</div></div></li>
-        <li><span class="yr">2020</span><div><div class="place">Bandarban, Teknaf &amp; Saint Martin's Island</div><div class="what">Land use, slope analysis, beach profiling and vegetation survey, plus an economic survey with interviews on Saint Martin's Island.</div></div></li>
-        <li><span class="yr">2019</span><div><div class="place">Northern Bangladesh · Dinajpur</div><div class="what">River cross-section profiling, soil texture analysis, and interviews and a socio-economic survey with the Santal community.</div></div></li>
-      </ol>
+      <div class="role"><h2 style="margin:0">GIS Analyst at CEGIS</h2><span class="when">Jun 2024 – present</span></div>
+      <p class="org">Center for Environmental and Geographic Information Services, Dhaka</p>
+      <p>I build the spatial data and analysis behind national projects for WARPO, the World Bank, the Bangladesh Water Development Board, the Ministry of Land and the Bangladesh Bureau of Statistics.</p>
+      <p><a href="experience.html">Experience and education →</a> &nbsp; <a href="research.html">Publications and talks →</a></p>
     </div>
   </section>
-
-  <section id="education">
-    <div class="label"><span>Layer 04</span>Education &amp; skills</div>
+  <section id="beyond">
+    <div class="label"><span>Layer 04</span>Beyond work</div>
     <div class="content">
-      <div class="cols">
-        <div class="edu">
-          <div>
-            <div class="role"><h3>MSc, Geography &amp; Environment</h3><span class="when">2023–24</span></div>
-            <p class="org" style="margin:0 0 6px">Jahangirnagar University</p>
-            <div class="gpa">3.97<small>/ 4.00</small></div>
-          </div>
-          <div>
-            <div class="role"><h3>BSc, Geography &amp; Environment</h3><span class="when">2018–23</span></div>
-            <p class="org" style="margin:0 0 6px">Jahangirnagar University</p>
-            <div class="gpa">3.81<small>/ 4.00</small></div>
-          </div>
-        </div>
-        <dl class="skills">
-          <div><dt>GIS &amp; remote sensing</dt><dd><span class="tag">ArcGIS</span><span class="tag">ArcGIS Pro</span><span class="tag">Google Earth Engine</span><span class="tag">ERDAS Imagine</span><span class="tag">Spatial analysis &amp; modelling</span><span class="tag">Multi-temporal change detection</span><span class="tag">Land use mapping</span></dd></div>
-          <div><dt>Statistics &amp; programming</dt><dd><span class="tag">SPSS</span><span class="tag">Python (basic)</span><span class="tag">R (basic, improving)</span></dd></div>
-          <div><dt>Field &amp; participatory</dt><dd><span class="tag">PRA</span><span class="tag">Key informant interviews</span><span class="tag">Field surveys</span><span class="tag">Participatory data collection</span><span class="tag">FGD design</span></dd></div>
-          <div><dt>Research</dt><dd><span class="tag">Systematic literature review</span><span class="tag">Quantitative &amp; qualitative analysis</span><span class="tag">Scientific communication</span></dd></div>
-        </dl>
-      </div>
-
-      <p class="sub">Grants &amp; scholarships</p>
-      <ul class="awards">
-        <li><span>National Science and Technology (NST) Fellowship</span><span class="when">2024–25</span><span class="by">Ministry of Science and Technology</span></li>
-        <li><span>Government General Scholarship, Honours final result</span><span class="when">2021</span><span class="by">Directorate of Secondary and Higher Education</span></li>
-        <li><span>University Merit Scholarship</span><span class="when">2018–23</span><span class="by">Jahangirnagar University</span></li>
+      <h2>Away from the maps</h2>
+      <p>Outside research I spend my time making things by hand and learning new ones.</p>
+      <ul class="hobbies">
+        <li><b>Violin</b><span>Currently learning, one scale at a time.</span></li>
+        <li><b>Drawing and painting</b><span>Sketching and painting on paper and canvas.</span></li>
+        <li><b>Glass painting</b><span>Colour and pattern on glass.</span></li>
+        <li><b>Photography</b><span>Mostly landscapes and moments from fieldwork.</span></li>
       </ul>
-
-      <p class="sub">Leadership</p>
-      <ul class="awards">
-        <li><span>Vice President, Prothom Alo Bondhushava, JU unit</span><span class="when">2023</span><span class="by">Led awareness campaigns, cultural events and youth volunteer programmes.</span></li>
-        <li><span>Vice President, Student Welfare Association of Chandpur Zilla, JU</span><span class="when">2023</span><span class="by">Coordinated welfare, mentorship and fundraising for students from Chandpur.</span></li>
-      </ul>
+      <p style="margin-top:20px"><a href="https://www.facebook.com/share/1HWETfEWin/">See my art and photography on Facebook →</a></p>
     </div>
   </section>
 
   <section id="contact">
-    <div class="label"><span>Layer 05</span>Contact</div>
+    <div class="label"><span>Contact</span>Get in touch</div>
     <div class="content">
       <h2>Open to research collaborations, graduate positions and GIS consultancy.</h2>
       <div class="contact">
         <span class="email" id="email">pobon.47@geography-juniv.edu.bd</span>
         <button type="button" id="copy">Copy email</button>
       </div>
-      <p style="margin-top:20px"><a href="https://www.researchgate.net/profile/Md-Tamjid-Al-Noor-Pobon">ResearchGate</a></p>
+      <p style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px"><a href="https://www.linkedin.com/in/md-tamjid-al-noor-pobon-41398a192">LinkedIn</a><a href="https://www.researchgate.net/profile/Md-Tamjid-Al-Noor-Pobon">ResearchGate</a><a href="https://www.facebook.com/share/1GdF9u3Dz2/">Facebook</a></p>
     </div>
   </section>
 </main>
@@ -315,52 +118,6 @@ footer{padding-block:32px 48px;font:400 .8125rem var(--mono);color:var(--muted);
 <footer>
   <div class="wrap">Md Tamjid Al Noor Pobon · Dhaka, Bangladesh</div>
 </footer>
-
-<script>
-document.getElementById('copy').addEventListener('click', function(){
-  var b=this, t=document.getElementById('email').textContent;
-  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
-  try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';},sel);}catch(e){sel();}
-  setTimeout(function(){b.textContent='Copy email';},2000);
-});
-
-// Contour field: iso-lines of a smooth noise surface, drawn once.
-(function(){
-  var c=document.getElementById('contours'), ctx=c.getContext('2d');
-  function noise(x,y){
-    return Math.sin(x*1.3+Math.sin(y*0.7))*0.5+Math.sin(y*1.1-x*0.4+1.7)*0.35+Math.sin((x+y)*2.1)*0.15+Math.cos(x*0.5-y*1.6)*0.25;
-  }
-  function draw(){
-    var w=c.clientWidth,h=c.clientHeight,d=window.devicePixelRatio||1;
-    c.width=w*d;c.height=h*d;ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);
-    var col=getComputedStyle(document.documentElement).getPropertyValue('--contour').trim();
-    var step=8,cols=Math.ceil(w/step)+1,rows=Math.ceil(h/step)+1,f=[];
-    for(var j=0;j<rows;j++){for(var i=0;i<cols;i++){var x=i*step/260,y=j*step/260;f.push(noise(x+2,y)+ (i*step/w)*0.6);}}
-    ctx.strokeStyle=col;
-    for(var k=-1.2;k<1.8;k+=0.12){
-      ctx.globalAlpha= Math.abs((k*100|0)%60)<12 ? .5 : .22;
-      ctx.lineWidth= ctx.globalAlpha>.4 ? 1.1 : .7;
-      ctx.beginPath();
-      for(var j=0;j<rows-1;j++)for(var i=0;i<cols-1;i++){
-        var a=f[j*cols+i],b=f[j*cols+i+1],cc=f[(j+1)*cols+i+1],dd=f[(j+1)*cols+i];
-        var x0=i*step,y0=j*step,p=[];
-        function e(v1,v2,ax,ay,bx,by){if((v1<k)!==(v2<k)){var t=(k-v1)/(v2-v1);p.push([ax+(bx-ax)*t,ay+(by-ay)*t]);}}
-        e(a,b,x0,y0,x0+step,y0);e(b,cc,x0+step,y0,x0+step,y0+step);e(dd,cc,x0,y0+step,x0+step,y0+step);e(a,dd,x0,y0,x0,y0+step);
-        if(p.length>=2){ctx.moveTo(p[0][0],p[0][1]);ctx.lineTo(p[1][0],p[1][1]);}
-        if(p.length===4){ctx.moveTo(p[2][0],p[2][1]);ctx.lineTo(p[3][0],p[3][1]);}
-      }
-      ctx.stroke();
-    }
-    // fade toward text side
-    ctx.globalAlpha=1;ctx.globalCompositeOperation='destination-out';
-    var g=ctx.createLinearGradient(0,0,w,0);g.addColorStop(0,'rgba(0,0,0,.92)');g.addColorStop(.55,'rgba(0,0,0,.55)');g.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.globalCompositeOperation='source-over';
-  }
-  draw();
-  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(draw,150);});
-  if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
-  new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fifty years of floods in Bangladesh</title>
+<meta name="description" content="With Bibi Hafsa and Jannatun Hussna Tuya, I reviewed the major floods between 1970 and 2020, mapped the area each one covered, and combined the record into">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>html,body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<header>
+  <canvas id="contours" aria-hidden="true"></canvas>
+  <div class="wrap hero hero-sm">
+    <nav aria-label="Pages">
+      <a class="home" href="index.html">Tamjid Al Noor Pobon</a>
+      <ul><li><a href="index.html">Home</a></li><li><a href="index.html#projects" aria-current="page">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="fieldwork.html">Fieldwork</a></li></ul>
+    </nav>
+    <div class="kind">Floods · Article in Bangla, 2024</div>
+    <h1 class="pagetitle">Fifty years of floods in Bangladesh</h1>
+    <p class="lede" style="margin:0;max-width:52ch">With Bibi Hafsa and Jannatun Hussna Tuya, I reviewed the major floods between 1970 and 2020, mapped the area each one covered, and combined the record into maps of flood-prone districts and flood-prone land. Published in <i lang="bn">সমাজবিজ্ঞান সমীক্ষা</i> (Social Science Review), Jahangirnagar University, issue 7, July 2024.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <div class="label"><span>Project 02</span>Floods</div>
+    <div class="content">
+
+      <div class="feature">
+        <div class="tabs" role="tablist" aria-label="Flood year">
+          <button type="button" role="tab" data-y="F1974" aria-selected="false">1974</button>
+          <button type="button" role="tab" data-y="F1988" aria-selected="false">1988</button>
+          <button type="button" role="tab" data-y="F1998" aria-selected="true">1998</button>
+          <button type="button" role="tab" data-y="F2010" aria-selected="false">2010</button>
+          <button type="button" role="tab" data-y="F2017" aria-selected="false">2017</button>
+        </div>
+        <div class="cymap">
+          <figure><img id="flimg" src="img/f1998.jpg" width="734" height="939" alt="Map of areas flooded in Bangladesh in 1998"><figcaption id="flcap">Flood-affected areas, 1998. Blue shows flooded land.</figcaption></figure>
+          <div>
+            <div class="stat" id="flyear" style="color:var(--accent)">1998</div>
+            <div class="statlabel" id="fltag">the most severe flood in the record</div>
+            <p id="flnote" style="font-size:.975rem">More than two-thirds of the country went under water, and the flooding lasted over two months.</p>
+          </div>
+        </div>
+
+        <div class="top" style="margin:32px 0 0;padding-top:24px;border-top:1px solid var(--line)">
+          <figure><img src="img/fdist.jpg" width="710" height="920" alt="Map of flood-prone districts of Bangladesh based on floods from 1970 to 2020"><figcaption>Flood-prone districts, based on floods from 1970 to 2020. Darker red means more flood-prone.</figcaption></figure>
+          <figure><img src="img/fprone.jpg" width="708" height="915" alt="Map of flood-prone areas of Bangladesh"><figcaption>Flood-prone areas. Dark blue marks the land flooded most often.</figcaption></figure>
+        </div>
+        <div class="cymap" style="margin-top:20px;align-items:end">
+          <div>
+            <div class="stat" style="color:var(--accent)">27.39%</div>
+            <div class="statlabel">of the country flooded most often, 1970–2020</div>
+          </div>
+          <p style="font-size:.975rem;margin:0">The Sylhet region in the north-east is the most flood-prone. The north-west and the Chittagong hill areas are the least. The flood-prone map was checked with an ROC curve, giving an AUC of 0.781.</p>
+        </div>
+        <p class="muted" style="font:400 .75rem/1.5 var(--mono);margin:20px 0 0">Maps from Hafsa, Pobon &amp; Tuya (2024) · <a href="https://www.researchgate.net/publication/385619510_1970_sala_theke_2020_sala_paryanta_banladesera_ban'ya_paristhitira_bhaugalika_paryalocana_Geographical_review_of_flood_situation_in_Bangladesh_from_1970_to_2020">Read the article</a></p>
+      </div>
+      <div class="next"><a href="index.html#projects">← All projects</a><a href="dhaka.html">Next: Dhaka livability →</a></div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="label"><span>Contact</span>Get in touch</div>
+    <div class="content">
+      <h2>Open to research collaborations, graduate positions and GIS consultancy.</h2>
+      <div class="contact">
+        <span class="email" id="email">pobon.47@geography-juniv.edu.bd</span>
+        <button type="button" id="copy">Copy email</button>
+      </div>
+      <p style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px"><a href="https://www.linkedin.com/in/md-tamjid-al-noor-pobon-41398a192">LinkedIn</a><a href="https://www.researchgate.net/profile/Md-Tamjid-Al-Noor-Pobon">ResearchGate</a><a href="https://www.facebook.com/share/1GdF9u3Dz2/">Facebook</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Md Tamjid Al Noor Pobon · Dhaka, Bangladesh</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
