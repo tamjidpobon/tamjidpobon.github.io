@@ -168,3 +168,9 @@ nav .home{color:var(--fg);text-decoration:none;font-weight:500}
 .hobbies b{font:400 1.35rem/1.25 var(--display)}
 .hobbies span{color:var(--muted);font-size:.95rem}
 @media (max-width:560px){.hobbies{grid-template-columns:minmax(0,1fr)}}
+
+.card.wide{grid-column:1/-1;flex-direction:row}
+.card.wide img{width:46%;aspect-ratio:4/3;border-bottom:0;border-right:1px solid var(--line)}
+.card.wide .body{justify-content:center;padding:20px 24px}
+@media (max-width:760px){.card.wide{flex-direction:column}.card.wide img{width:100%;border-right:0;border-bottom:1px solid var(--line)}}
+.bars li{grid-template-columns:104px minmax(0,1fr) 54px}

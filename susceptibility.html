@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flood Susceptibility of Bangladesh</title>
+<meta name="description" content="For my BSc dissertation I mapped how likely every part of Bangladesh is to flood. I built a national flood inventory from 1970 to 2022, mapped ten conditio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>html,body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<header>
+  <canvas id="contours" aria-hidden="true"></canvas>
+  <div class="wrap hero hero-sm">
+    <nav aria-label="Pages">
+      <a class="home" href="index.html">Tamjid Al Noor Pobon</a>
+      <ul><li><a href="index.html">Home</a></li><li><a href="index.html#projects" aria-current="page">Projects</a></li><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="fieldwork.html">Fieldwork</a></li></ul>
+    </nav>
+    <div class="kind">Floods · BSc dissertation, 2023</div>
+    <h1 class="pagetitle">Where is Bangladesh most likely to flood?</h1>
+    <p class="lede" style="margin:0;max-width:52ch">For my BSc dissertation I mapped how likely every part of Bangladesh is to flood. I built a national flood inventory from 1970 to 2022, mapped ten conditioning factors, and combined them with GIS-based multi-criteria analysis.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <div class="label"><span>Project 05</span>Floods</div>
+    <div class="content">
+      <h2>Ten factors that shape flooding</h2>
+      <p>Each map is one flood conditioning factor, reclassified and weighted with the Analytic Hierarchy Process (AHP). Wetness and distance from the major rivers carried the most weight.</p>
+      <div class="feature">
+        <div class="tabs" role="tablist" aria-label="Conditioning factor">
+          <button type="button" role="tab" data-f="fs_twi" aria-selected="true">Wetness (TWI)</button>
+          <button type="button" role="tab" data-f="fs_river" aria-selected="false">River distance</button>
+          <button type="button" role="tab" data-f="fs_rainfall" aria-selected="false">Rainfall</button>
+          <button type="button" role="tab" data-f="fs_elevation" aria-selected="false">Elevation</button>
+          <button type="button" role="tab" data-f="fs_slope" aria-selected="false">Slope</button>
+          <button type="button" role="tab" data-f="fs_drainage" aria-selected="false">Drainage</button>
+          <button type="button" role="tab" data-f="fs_soil" aria-selected="false">Soil</button>
+          <button type="button" role="tab" data-f="fs_lulc" aria-selected="false">Land cover</button>
+          <button type="button" role="tab" data-f="fs_ndvi" aria-selected="false">NDVI</button>
+          <button type="button" role="tab" data-f="fs_road" aria-selected="false">Road distance</button>
+        </div>
+        <div class="cymap">
+          <figure><img id="fsimg" src="fs_twi.jpg" width="760" height="992" alt="Map of Topographic Wetness Index across Bangladesh"><figcaption id="fscap">Topographic Wetness Index: where water tends to collect.</figcaption></figure>
+          <div>
+            <div class="stat" id="fsw" style="color:var(--accent)">0.14</div>
+            <div class="statlabel">AHP weight of this factor</div>
+            <ul class="bars fsbars" aria-label="AHP weight of each conditioning factor">
+            <li data-f="fs_twi" class="on"><span>Wetness</span><span class="track"><span class="fill" style="width:100%;display:block"></span></span><span>0.14</span></li>
+            <li data-f="fs_river"><span>River distance</span><span class="track"><span class="fill" style="width:100%;display:block"></span></span><span>0.14</span></li>
+            <li data-f="fs_rainfall"><span>Rainfall</span><span class="track"><span class="fill" style="width:93%;display:block"></span></span><span>0.13</span></li>
+            <li data-f="fs_elevation"><span>Elevation</span><span class="track"><span class="fill" style="width:86%;display:block"></span></span><span>0.12</span></li>
+            <li data-f="fs_slope"><span>Slope</span><span class="track"><span class="fill" style="width:71%;display:block"></span></span><span>0.10</span></li>
+            <li data-f="fs_drainage"><span>Drainage</span><span class="track"><span class="fill" style="width:64%;display:block"></span></span><span>0.09</span></li>
+            <li data-f="fs_soil"><span>Soil</span><span class="track"><span class="fill" style="width:64%;display:block"></span></span><span>0.09</span></li>
+            <li data-f="fs_lulc"><span>Land cover</span><span class="track"><span class="fill" style="width:50%;display:block"></span></span><span>0.07</span></li>
+            <li data-f="fs_ndvi"><span>NDVI</span><span class="track"><span class="fill" style="width:43%;display:block"></span></span><span>0.06</span></li>
+            <li data-f="fs_road"><span>Road distance</span><span class="track"><span class="fill" style="width:43%;display:block"></span></span><span>0.06</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:48px">The result</h2>
+      <p>Combining the weighted layers gave a flood susceptibility map for the whole country. More than half of Bangladesh falls in the high or very high classes. Checked against the national flood inventory, the map scored an AUC of 0.815.</p>
+      <div class="feature">
+        <div class="cymap">
+          <figure><img src="fs_final.jpg" width="760" height="983" alt="Flood susceptibility map of Bangladesh in five classes from very low to very high"><figcaption>Flood susceptibility map of Bangladesh, from very low (dark green) to very high (red).</figcaption></figure>
+          <div>
+            <div class="stat" style="color:var(--accent)">0.815</div>
+            <div class="statlabel">AUC from ROC validation</div>
+            <div class="statlabel" style="margin:20px 0 4px">Share of the country in each class</div>
+            <ul class="bars" style="margin:0" aria-label="Share of Bangladesh in each susceptibility class">
+            <li><span>Very high</span><span class="track"><span class="fill" style="width:16.2%;display:block;opacity:1;background:var(--erode)"></span></span><span>7.9%</span></li>
+            <li><span>High</span><span class="track"><span class="fill" style="width:100.0%;display:block;opacity:1;background:var(--sediment)"></span></span><span>48.7%</span></li>
+            <li><span>Moderate</span><span class="track"><span class="fill" style="width:77.5%;display:block;opacity:1;background:var(--accent)"></span></span><span>37.75%</span></li>
+            <li><span>Low</span><span class="track"><span class="fill" style="width:11.2%;display:block;opacity:1;background:var(--muted)"></span></span><span>5.45%</span></li>
+            <li><span>Very low</span><span class="track"><span class="fill" style="width:0.4%;display:block;opacity:1;background:var(--muted)"></span></span><span>0.2%</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted" style="font:400 .75rem/1.5 var(--mono);margin:20px 0 0">Maps from my BSc dissertation, Jahangirnagar University, 2023. Supervisor: Prof. Dr. Khandakar Hasan Mahmud.</p>
+      </div>
+
+      <p class="sub">What came next</p>
+      <p>I am now extending this work to test how well expert-based, statistical and machine learning models transfer to regions they were not trained on. That study is under review at <i>Natural Hazards and Earth System Sciences</i>.</p>
+      <div class="next"><a href="index.html#projects">← All projects</a><a href="shoreline.html">Next: Shoreline change →</a></div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="label"><span>Contact</span>Get in touch</div>
+    <div class="content">
+      <h2>Open to research collaborations, graduate positions and GIS consultancy.</h2>
+      <div class="contact">
+        <span class="email" id="email">pobon.47@geography-juniv.edu.bd</span>
+        <button type="button" id="copy">Copy email</button>
+      </div>
+      <p style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px"><a href="https://www.linkedin.com/in/md-tamjid-al-noor-pobon-41398a192">LinkedIn</a><a href="https://www.researchgate.net/profile/Md-Tamjid-Al-Noor-Pobon">ResearchGate</a><a href="https://www.facebook.com/share/1GdF9u3Dz2/">Facebook</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Md Tamjid Al Noor Pobon · Dhaka, Bangladesh</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

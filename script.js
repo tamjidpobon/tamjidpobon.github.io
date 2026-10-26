@@ -74,6 +74,34 @@ document.getElementById('copy').addEventListener('click', function(){
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.g)})});
 })();
 
+// Vegetation switcher (shoreline page)
+(function(){
+  if(!document.getElementById('vgimg'))return;
+  var D={
+    sitrang:{n:'Sitrang',s:'−2.89',note:'A weak storm: healthy cover dipped from 83.3% to 80.4%, and the share of stressed vegetation rose by 4 points.'},
+    bulbul:{n:'Bulbul',s:'−2.16',note:'Healthy cover fell from 84.7% to 82.5%, a noticeable but limited shift toward moderate and poor vegetation.'},
+    amphan:{n:'Amphan',s:'−26.1',note:'Healthy cover fell from 84.1% to 58.0% of the region, while moderate vegetation rose by 24 points.'},
+    mocha:{n:'Mocha',s:'−2.68',note:'Healthy cover fell from 85.0% to 82.3%.'}
+  };
+  var img=document.getElementById('vgimg'),tabs=document.querySelectorAll('[data-v][role=tab]'),bars=document.querySelectorAll('.vgbars li');
+  function show(k){var d=D[k];img.src='evi_'+k+'.jpg';img.alt='Enhanced Vegetation Index maps of coastal Bangladesh before and after Cyclone '+d.n;
+    document.getElementById('vgcap').textContent='EVI before and after Cyclone '+d.n+'. Red and orange show sparse or stressed vegetation, green shows healthy cover.';
+    document.getElementById('vgstat').textContent=d.s;document.getElementById('vgnote').textContent=d.note;
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.v===k)});bars.forEach(function(b){b.classList.toggle('on',b.dataset.v===k)});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.v)})});
+})();
+
+// Flood factor switcher (susceptibility page)
+(function(){
+  if(!document.getElementById('fsimg'))return;
+  var D={fs_twi:{n:'Wetness (TWI)',w:'0.14',d:'Topographic Wetness Index: where water tends to collect.'},fs_river:{n:'River distance',w:'0.14',d:'Distance from the major rivers.'},fs_rainfall:{n:'Rainfall',w:'0.13',d:'Average annual rainfall.'},fs_elevation:{n:'Elevation',w:'0.12',d:'Height above sea level.'},fs_slope:{n:'Slope',w:'0.10',d:'Steepness of the land.'},fs_drainage:{n:'Drainage',w:'0.09',d:'Drainage density: length of channels per unit area.'},fs_soil:{n:'Soil',w:'0.09',d:'How easily soil lets water through.'},fs_lulc:{n:'Land cover',w:'0.07',d:'Land use and land cover.'},fs_ndvi:{n:'NDVI',w:'0.06',d:'Vegetation density.'},fs_road:{n:'Road distance',w:'0.06',d:'Distance from roads.'}};
+  var img=document.getElementById('fsimg'),tabs=document.querySelectorAll('[data-f][role=tab]'),bars=document.querySelectorAll('.fsbars li');
+  function show(k){var d=D[k];img.src=k+'.jpg';img.alt='Map of '+d.n+' across Bangladesh';
+    document.getElementById('fscap').textContent=d.d;document.getElementById('fsw').textContent=d.w;
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.f===k)});bars.forEach(function(b){b.classList.toggle('on',b.dataset.f===k)});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.f)})});
+})();
+
 // Cyclone switcher
 (function(){
   if(!document.getElementById('cyimg'))return;
