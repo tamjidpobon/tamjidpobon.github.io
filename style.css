@@ -174,3 +174,32 @@ nav .home{color:var(--fg);text-decoration:none;font-weight:500}
 .card.wide .body{justify-content:center;padding:20px 24px}
 @media (max-width:760px){.card.wide{flex-direction:column}.card.wide img{width:100%;border-right:0;border-bottom:1px solid var(--line)}}
 .bars li{grid-template-columns:104px minmax(0,1fr) 54px}
+
+/* intro photo */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:32px 56px;align-items:center}
+.intro-text{min-width:0}
+.portrait{margin:0;position:relative}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:4px;border:1px solid var(--line);box-shadow:10px 10px 0 -1px var(--surface),10px 10px 0 0 var(--line)}
+@media (max-width:760px){
+  .intro{grid-template-columns:minmax(0,1fr)}
+  .portrait{order:-1;max-width:220px}
+}
+
+.intro h1{font-size:clamp(1.75rem,4.4vw,3.5rem);line-height:1.05;white-space:nowrap}
+
+/* fieldwork gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.gallery figure{margin:0;min-width:0}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:3px;border:1px solid var(--line);background:var(--surface)}
+.gallery figcaption{font:400 .72rem/1.45 var(--mono);color:var(--muted);margin-top:6px}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.gallery figure.wide{grid-column:1/-1}
+.gallery figure.wide img{aspect-ratio:21/8;object-position:center 42%}
+.gallery figure.span2{grid-column:span 2}
+.gallery figure.span2{display:flex;flex-direction:column}
+.gallery figure.span2 img{flex:1 1 auto;height:0;min-height:0;aspect-ratio:auto;object-fit:cover}
+@media (max-width:760px){.gallery figure.span2 img{flex:none;height:auto;aspect-ratio:8/3}}
+.gallery figure.top img{object-position:center 25%}
+.gallery{grid-auto-flow:row dense}
+.credit{font:400 .72rem/1.5 var(--mono);color:var(--muted);margin:10px 0 0}
+.gallery figure.pos55 img{object-position:center 55%}
